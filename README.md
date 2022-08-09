@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @HassaanBM
 - 👀 I’m interested in travel and tourisim industry.
-- 🌱 I’m currently learning python.
+- 🌱 I’m currently learning python and React.
 - 💞️ I’m looking to collaborate on non profit projects or projects that will help community.
 - 📫 I'm mostly active on LinkedIn https://www.linkedin.com/in/hassaanbinmasham/.
 
