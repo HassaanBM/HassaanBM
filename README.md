@@ -1,4 +1,4 @@
-#👋 Hi, I’m @HassaanBM
+# 👋 Hi, I’m @HassaanBM
 ## 👀 I’m an Experience Designer.
 
 - 🌱 I’m currently learning Python.
