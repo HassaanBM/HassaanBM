@@ -1,7 +1,14 @@
 /* General Variables */
 :root {
+
+    /* Background Variables */
     --background-light: #ffffff;
     --background-dark: #121212;
+    --background-grid-color: rgba(126, 126, 126, 0.5);
+    --background-grid-size: 3em;
+    --background-grid-width: .05em;
+
+
     --text-light: #000000;
     --text-dark: #ffffff;
     --accent-color: #3f51b5;
@@ -19,7 +26,14 @@
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
+    background-size:      var(--background-grid-size) var(--background-grid-size);
+    background-position:  center top;
+    background-image: 
+      linear-gradient(00deg, var(--background-grid-color) var(--background-grid-width), transparent var(--background-grid-width)),
+      linear-gradient(90deg, var(--background-grid-color) var(--background-grid-width), transparent var(--background-grid-width));
   }
+
+
   @media (prefers-color-scheme: dark) {
     body {
       background-color: var(--background-dark);
