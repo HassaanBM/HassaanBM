@@ -1,11 +1,12 @@
 /* General Variables */
 :root {
   /* Background Variables */
-  --background-light: #ffffff;
-  --background-dark: #121212;
-  --background-grid-color: rgba(126, 126, 126, 0.5);
-  --background-grid-size: 3em;
-  --background-grid-width: .05em;
+  --background-light:       #ffffff;
+  --background-dark:        #121212;
+  --background-grid-opacity:  20%;
+  --background-grid-color:    light-dark(hsl( var(--background-dark) / var(--background-grid-opacity)), hsl( var(--background-light) /  var(--background-grid-opacity)));
+  --background-grid-size:     3em;
+  --background-grid-width:    0.05em;
 
   --text-light: #000000;
   --text-dark: #ffffff;
