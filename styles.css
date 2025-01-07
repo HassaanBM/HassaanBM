@@ -1,20 +1,42 @@
+/* Table of Contents
+  1. General Variables
+  2. Light/Dark Mode Detection
+  3. Container Styling
+  4. Card Styling
+  5. Profile Image
+  6. Name Styling
+  7. Dummy Heading
+  8. Fixed Heading
+  9. Social Links 
+
+  Meta:
+  Use the table of contents to navigate the styles.css file.
+  Use the search functionality to find specific styles.
+  Use the comments to understand the purpose of each section.
+  Use the code to customize the styles to your liking.
+  Use lowercase and hyphens for class names.
+
+*/
+
+
+
 /* General Variables */
 :root {
   /* Background Variables */
-  --background-light:       #ffffff;
-  --background-dark:        #121212;
+  --background-light:       hsl(0, 0%, 100%);
+  --background-dark:        hsl(0, 0%, 7%);
   --background-grid-opacity:  20%;
-  --background-grid-color:    light-dark(hsl( var(--background-dark) / var(--background-grid-opacity)), hsl( var(--background-light) /  var(--background-grid-opacity)));
+  --background-grid-color:    color-mix(in oklab, var(--background-light) var(--background-grid-opacity), var(--background-dark) var(--background-grid-opacity));
   --background-grid-size:     3em;
   --background-grid-width:    0.05em;
 
-  --text-light: #000000;
-  --text-dark: #ffffff;
-  --accent-color: #3f51b5;
-  --card-bg-light: #f9f9f9;
-  --card-bg-dark: #1e1e1e;
-  --border-radius: 10px;
-  --font-family: 'Arial', sans-serif;
+  --text-light:     hsl(000, 000%, 000%);
+  --text-dark:      hsl(000, 000%, 100%);
+  --accent-color:   hsl(231, 048%, 048%);
+  --card-bg-light:  hsl(000, 000%, 098%);
+  --card-bg-dark:   hsl(000, 000%, 012%);
+  --border-radius:    10px;
+  --font-family:      'Arial', sans-serif;
 }
   
 /* Light/Dark Mode Detection */
