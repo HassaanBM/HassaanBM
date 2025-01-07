@@ -1,118 +1,126 @@
 /* General Variables */
 :root {
+  /* Background Variables */
+  --background-light: #ffffff;
+  --background-dark: #121212;
+  --background-grid-color: rgba(126, 126, 126, 0.5);
+  --background-grid-size: 3em;
+  --background-grid-width: .05em;
 
-    /* Background Variables */
-    --background-light: #ffffff;
-    --background-dark: #121212;
-    --background-grid-color: rgba(126, 126, 126, 0.5);
-    --background-grid-size: 3em;
-    --background-grid-width: .05em;
-
-
-    --text-light: #000000;
-    --text-dark: #ffffff;
-    --accent-color: #3f51b5;
-    --card-bg-light: #f9f9f9;
-    --card-bg-dark: #1e1e1e;
-    --border-radius: 10px;
-    --font-family: 'Arial', sans-serif;
-  }
+  --text-light: #000000;
+  --text-dark: #ffffff;
+  --accent-color: #3f51b5;
+  --card-bg-light: #f9f9f9;
+  --card-bg-dark: #1e1e1e;
+  --border-radius: 10px;
+  --font-family: 'Arial', sans-serif;
+}
   
-  /* Light/Dark Mode Detection */
+/* Light/Dark Mode Detection */
+body {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+  background-size:      var(--background-grid-size) var(--background-grid-size);
+  background-position:  center top;
+  background-image: 
+    linear-gradient(00deg, var(--background-grid-color) var(--background-grid-width), transparent var(--background-grid-width)),
+    linear-gradient(90deg, var(--background-grid-color) var(--background-grid-width), transparent var(--background-grid-width));
+}
+
+
+.first-fold {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  overflow: hidden;
+  spline-viewer {
+      height: calc(100vh + 80px);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
   body {
-    background-color: var(--background-light);
-    color: var(--text-light);
-    font-family: var(--font-family);
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s, color 0.3s;
-    background-size:      var(--background-grid-size) var(--background-grid-size);
-    background-position:  center top;
-    background-image: 
-      linear-gradient(00deg, var(--background-grid-color) var(--background-grid-width), transparent var(--background-grid-width)),
-      linear-gradient(90deg, var(--background-grid-color) var(--background-grid-width), transparent var(--background-grid-width));
+    background-color: var(--background-dark);
+    color: var(--text-dark);
   }
-
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: var(--background-dark);
-      color: var(--text-dark);
-    }
-  }
+}
   
-  /* Container Styling */
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+
+/* Container Styling */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
   
-  /* Card Styling */
+/* Card Styling */
+.card {
+  background-color: var(--card-bg-light);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 350px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+@media (prefers-color-scheme: dark) {
   .card {
-    background-color: var(--card-bg-light);
-    padding: 20px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 350px;
-    width: 100%;
-    transition: background-color 0.3s;
+    background-color: var(--card-bg-dark);
   }
-  @media (prefers-color-scheme: dark) {
-    .card {
-      background-color: var(--card-bg-dark);
-    }
-  }
-  
-  /* Profile Image */
-  .profile-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 0 auto 15px;
-  }
-  
-  /* Name Styling */
-  .name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  /* Dummy Heading */
-  .dummy-heading {
-    font-size: 1rem;
-    margin-bottom: 5px;
-  }
-  
-  /* Fixed Heading */
-  .fixed-heading {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--accent-color);
-    margin-bottom: 20px;
-  }
-  
-  /* Social Links */
-  .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
-  .social-links a {
-    color: var(--accent-color);
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
+}
+
+/* Profile Image */
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+}
+
+/* Name Styling */
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Dummy Heading */
+.dummy-heading {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Fixed Heading */
+.fixed-heading {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.social-links a {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.social-links a:hover {
+  color: var(--text-light);
+}
+@media (prefers-color-scheme: dark) {
   .social-links a:hover {
-    color: var(--text-light);
+    color: var(--text-dark);
   }
-  @media (prefers-color-scheme: dark) {
-    .social-links a:hover {
-      color: var(--text-dark);
-    }
-  }
-  
+}
