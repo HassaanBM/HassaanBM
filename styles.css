@@ -79,7 +79,7 @@ body {
     color: var(--text-dark);
     &::after{
       filter: none;
-      opacity: 0.5;
+      opacity: 0.25;
     }
   }
   .social-links a:hover {
@@ -94,7 +94,7 @@ body {
 /* First Fold */
 .first-fold {
   position: relative;
-  z-index: 1;
+  z-index: 0;
   height: 100vh;
   overflow: hidden;
   spline-viewer {
@@ -112,6 +112,7 @@ header{
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  z-index: 1;
   left: 0;
   right: 0;
   top: 0;
