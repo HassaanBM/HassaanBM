@@ -17,6 +17,7 @@
 /* General Variables */
 :root {
   /* Background Variables */
+  color-scheme:               light dark;
   --background-light:       hsl(0, 0%, 100%);
   --background-dark:        hsl(0, 0%, 7%);
   --background-grid-opacity:  20%;
@@ -105,23 +106,33 @@ body {
 
 
 
-/* Profile Image */
-.profile-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin: 0 auto 15px;
-}
-
-
-
-
-
-/* Name Styling */
-.name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+/* Header */
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-inline: max(2vw, 40px);
+  padding-block: 16px;
+  .logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    .profile-image {
+      width: 60px;
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+    }
+    .name {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  }
 }
 
 
