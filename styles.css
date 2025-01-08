@@ -28,7 +28,7 @@
 
   --text-light:     hsl(000, 000%, 000%);
   --text-dark:      hsl(000, 000%, 100%);
-  --accent-color:   hsl(231, 048%, 048%);
+  --accent-color:   hsl(56, 54%, 75%);
   --card-bg-light:  hsl(000, 000%, 098%);
   --card-bg-dark:   hsl(000, 000%, 012%);
   --border-radius:    10px;
@@ -81,9 +81,6 @@ body {
       filter: none;
       opacity: 0.25;
     }
-  }
-  .social-links a:hover {
-    color: var(--text-dark);
   }
 }
 
