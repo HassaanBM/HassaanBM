@@ -1,7 +1,8 @@
 /* Table of Contents
   1. General Variables
   2. Body Styling
-  3. Light/Dark Mode Detection
+  3. Header
+  4. First Fold
 
   Meta:
   Use the table of contents to navigate the styles.css file.
@@ -17,18 +18,19 @@
 /* General Variables */
 :root {
   /* Background Variables */
-  color-scheme:               light dark;
-  --background-light:       hsl(0, 0%, 100%);
+  color-scheme:               dark light;
+  --background-light:       hsl(0, 0%, 85%);
   --background-dark:        hsl(0, 0%, 7%);
-  --background-grid-opacity:  20%;
+  --background-grid-opacity:  15%;
   --background-grid-color:    color-mix(in oklab, var(--background-light) var(--background-grid-opacity), var(--background-dark) var(--background-grid-opacity));
   --background-grid-size:     3em;
   --background-grid-width:    0.05em;
-  --background-grain-speed:   13s;
+  --background-grain-speed:   17s;
 
   --text-light:     hsl(000, 000%, 000%);
   --text-dark:      hsl(000, 000%, 100%);
-  --accent-color:   hsl(56, 54%, 75%);
+  --accent-light:   hsl(56, 54%, 40%);
+  --accent-dark:    hsl(56, 54%, 75%);
   --card-bg-light:  hsl(000, 000%, 098%);
   --card-bg-dark:   hsl(000, 000%, 012%);
   --border-radius:    10px;
@@ -52,50 +54,24 @@ body {
   background-image: 
     linear-gradient(00deg, var(--background-grid-color) var(--background-grid-width), transparent var(--background-grid-width)),
     linear-gradient(90deg, var(--background-grid-color) var(--background-grid-width), transparent var(--background-grid-width));
-
-  &::after {
-    filter:         invert(1);
-    animation:      noise var(--background-grain-speed) steps(10) infinite;
-    pointer-events: none;
-    background:     url(https://grainy-gradients.vercel.app/noise.svg) repeat;
-    content:        '';
-    height:         500%;
-    left:           -100%;
-    position:       fixed;
-    top:            -100%;
-    width:          500%;
-    z-index:        -1;
-  }
-}
-
-
-
-
-
-/* Light/Dark Mode Detection */
-@media (prefers-color-scheme: dark) {
-  body {
+  @media (prefers-color-scheme: dark) {
     background-color: var(--background-dark);
     color: var(--text-dark);
-    &::after{
-      filter: none;
-      opacity: 0.25;
-    }
   }
-}
-
-
-
-
-
-/* First Fold */
-.first-fold {
-  position: relative;
-  z-index: 0;
-  height: 100vh;
-  overflow: hidden;
-  spline-viewer {
-      height: calc(100vh + 80px);
+  @media (prefers-color-scheme: light) {
+    /* &::after {
+      filter:         invert(1);
+      animation:      noise var(--background-grain-speed) steps(10) infinite;
+      pointer-events: none;
+      background:     url(https://grainy-gradients.vercel.app/noise.svg) repeat;
+      content:        '';
+      height:         500%;
+      left:           -100%;
+      position:       fixed;
+      top:            -100%;
+      width:          500%;
+      z-index:        -1;
+    } */
   }
 }
 
@@ -124,11 +100,29 @@ header{
       width: 60px;
       border-radius: 50%;
       aspect-ratio: 1 / 1;
+      @media screen and (max-width: 768px) {
+        width: 30px;
+        
+      }
     }
-    .name {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 10px;
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    a {
+      font-size: 1.24rem;
+      text-decoration: none;
+      transition: color 0.3s;
+      color: dark-light( var(--text-dark), var(--text-light));
+      &:hover {
+        @media (prefers-color-scheme: dark) {
+          color: var(--accent-light)
+        }
+        @media (prefers-color-scheme: light) {
+          color: var(--accent-light)
+        }
+      }
     }
   }
 }
@@ -137,18 +131,17 @@ header{
 
 
 
-/* Social Links */
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  a {
-    color: var(--accent-color);
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: color 0.3s;
-    &:hover {
-      color: var(--text-light);
-    }
+
+/* First Fold */
+.first-fold {
+  position: relative;
+  z-index: 0;
+  height: 100vh;
+  overflow: hidden;
+  spline-viewer {
+      height: calc(100vh + 80px);
+      @media (prefers-color-scheme: dark) {
+        filter: invert(1);
+      }
   }
 }
