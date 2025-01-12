@@ -138,6 +138,10 @@ header{
   z-index: 0;
   height: 100vh;
   overflow: hidden;
+  @media (prefers-color-scheme: dark) {
+    mix-blend-mode: lighten;
+  }
+
   spline-viewer {
       height: calc(100vh + 80px);
       @media (prefers-color-scheme: dark) {
